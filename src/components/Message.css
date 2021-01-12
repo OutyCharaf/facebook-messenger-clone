@@ -1,0 +1,33 @@
+.card {
+  max-width: 18rem;
+  font-family: calibri;
+  font-size: 23px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.date-time {
+  color: #818181;
+  margin-bottom: 2px;
+}
+
+.user-message {
+  background-color: #0b81ff !important;
+  color: white !important;
+  margin-left: auto;
+}
+
+.user-message .card-title {
+  color:#e9e9eb;
+}
+
+.message {
+  text-align: left !important;
+  background-color: #e9e9eb !important;
+}
+
+.message .card-title {
+  color:#585858;
+}
+
+/* rgb(180, 3, 180) */

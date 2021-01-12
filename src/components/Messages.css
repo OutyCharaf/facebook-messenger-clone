@@ -1,0 +1,33 @@
+.app-title {
+    font-size: 25px;
+}
+
+.username {
+    font-family: dubai light;
+}
+
+.vertical-space {
+    height: 120px;
+}
+
+.message-form {
+    margin-bottom: 30px;
+    bottom: 0;
+    position: fixed !important;
+    width: 65%;
+    display: flex;
+    text-align: center !important;
+}
+
+.input-field {
+    border-radius: 40px !important;
+}
+
+.disabled-send-button {
+    background-color:#e9e9eb !important;
+    border: none;
+    width: 70px;
+}
+  
+  
+  /* rgb(38, 97, 206) */
