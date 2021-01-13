@@ -40,7 +40,7 @@
     transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 454px) {
+@media screen and (max-width: 467px) {
     
     .login-form {
         top: 60%;
@@ -56,5 +56,9 @@
 
     .login-button {
         width: 118px;
+    }
+
+    .alert {
+        margin-top: 70px;
     }
 }

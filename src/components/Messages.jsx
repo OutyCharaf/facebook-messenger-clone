@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Messages.css";
-import { IconButton } from '@material-ui/core';
 import Message from './Message';
-import { useEffect, useState } from "react";
+import { IconButton } from '@material-ui/core';
 import SendRoundedIcon from '@material-ui/icons/SendRounded';
+import ThumbUpRoundedIcon from '@material-ui/icons/ThumbUpRounded';
 import PropTypes from 'prop-types';
 
 function Messages({ user }) {
@@ -11,22 +11,20 @@ function Messages({ user }) {
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([]);
     
-    const addNewMessage = (event) => {
-        event.preventDefault();
-        const currentdate = new Date();
+    function currentDate() {
         let dateTime = 0;
+        const currentdate = new Date();
         if (currentdate.getHours()<10 && currentdate.getHours()>=0){
-        if(currentdate.getMinutes()<10 && currentdate.getMinutes()>=0){
-            dateTime = "0"+currentdate.getHours() + ":0" +currentdate.getMinutes() + ", "
-                        +currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear();
+            if(currentdate.getMinutes()<10 && currentdate.getMinutes()>=0){
+                dateTime = "0"+currentdate.getHours() + ":0" +currentdate.getMinutes() + ", "
+                            +currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear();
+            }
+            else{
+                dateTime = "0"+currentdate.getHours() + ":" +currentdate.getMinutes() + ", "
+                            +currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear();
+            }
         }
-        else{
-            dateTime = "0"+currentdate.getHours() + ":" +currentdate.getMinutes() + ", "
-                        +currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear();
-        }
-        }
-        else{
-        if(currentdate.getMinutes()<10 && currentdate.getMinutes()>=0){
+        else if(currentdate.getMinutes()<10 && currentdate.getMinutes()>=0){
             dateTime = currentdate.getHours() + ":0" +currentdate.getMinutes() + ", "
                     +currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear();
         }
@@ -34,10 +32,19 @@ function Messages({ user }) {
             dateTime = currentdate.getHours() + ":" +currentdate.getMinutes() + ", "
                         +currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear();
         }
-        }
-        setMessages([...messages, { user: user, text: message, dateTime: dateTime }]);
+        return dateTime;
+    }
+    
+    const addNewMessage = (event) => {
+        event.preventDefault();
+        setMessages([...messages, { user: user, text: message, dateTime: currentDate() }]);
         setMessage("");
     };
+
+    const sendThumbUp = () => {
+        setMessages([...messages, { user: user, text: 0x01F44D, dateTime: currentDate() }]);
+        setMessage("");
+    }
 
     function scrollToBottom(){
         window.scrollTo(0, document.body.scrollHeight);
@@ -71,13 +78,15 @@ function Messages({ user }) {
                     type="text"
                     placeholder="Écrivez un message..."
                 />
-                <IconButton
-                    onClick={addNewMessage}
-                    disabled={!message}
-                    type="submit"
-                    color="primary">
-                    <SendRoundedIcon/>
-                </IconButton>
+                {message ? 
+                    <IconButton onClick={addNewMessage} type="submit" color="primary">
+                        <SendRoundedIcon/>
+                    </IconButton>
+                    :
+                    <IconButton onClick={sendThumbUp} color="primary">
+                        <ThumbUpRoundedIcon/>
+                    </IconButton>
+                }
             </form>
         </div>
     );
