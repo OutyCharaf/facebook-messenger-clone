@@ -10,7 +10,7 @@
     top: 24%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 25px;
+    font-size: 23px;
 }
 
 .login-form {
@@ -18,6 +18,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.username-field {
+    margin-bottom: 30px;
 }
 
 .login-button {
@@ -34,4 +38,23 @@
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 454px) {
+    
+    .login-form {
+        top: 60%;
+    }
+
+    .login-app-title {
+        top: 30%;
+    }
+
+    .username-field {
+        margin-bottom: 40px;
+    }
+
+    .login-button {
+        width: 118px;
+    }
 }

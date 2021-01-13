@@ -4,6 +4,7 @@
   font-size: 23px;
   margin-bottom: 10px;
   width: fit-content;
+  border-radius: 30px !important;
 }
 
 .date-time {
@@ -30,4 +31,9 @@
   color:#585858;
 }
 
-/* rgb(180, 3, 180) */
+@media screen and (max-width: 454px) {
+    
+  .card {
+    font-size: 20px;
+  }
+}

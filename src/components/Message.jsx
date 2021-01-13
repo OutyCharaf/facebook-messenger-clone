@@ -5,12 +5,9 @@ function Message(props) {
   const isUser = props.user === props.message.user;
   return (
     <React.Fragment>
-      <div className="date-time text-center">{props.message.dateTime}</div>
-      <div className={isUser ? "card user-message text-light mb-3": "card message text-dark mb-3"}>
-        <div className="card-body">
-          <h5 className="card-title">{props.message.user}</h5>
-          <p className="card-text">{props.message.text}</p>
-        </div>
+      <div className="date-time text-center mb-3">{props.message.dateTime}</div>
+      <div className={isUser ? "card user-message text-light mb-5": "card message text-dark mb-3"}>
+        <p className="card-text mt-2 mb-2 ml-4 mr-4">{props.message.text}</p>
       </div>
     </React.Fragment>
   );
