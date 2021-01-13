@@ -1,5 +1,5 @@
 .app-title {
-    font-size: 25px;
+    font-size: 23px;
 }
 
 .username {
@@ -7,27 +7,33 @@
 }
 
 .vertical-space {
-    height: 120px;
+    height: 45px;
 }
 
 .message-form {
-    margin-bottom: 30px;
     bottom: 0;
     position: fixed !important;
-    width: 65%;
+    width: 72%;
     display: flex;
     text-align: center !important;
+    background-color: white;
 }
 
-.input-field {
+.message-field {
     border-radius: 40px !important;
+    background-color: rgb(240, 240, 240) !important;
 }
 
-.disabled-send-button {
-    background-color:#e9e9eb !important;
-    border: none;
-    width: 70px;
+@media screen and (max-width: 798px) {
+    
+    .message-form {
+        width: 89%;
+    }
 }
-  
-  
-  /* rgb(38, 97, 206) */
+
+@media screen and (max-width: 454px) {
+    
+    .message-form {
+        width: 94%;
+    }
+}

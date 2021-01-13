@@ -28,13 +28,13 @@ function Login({ setUser }) {
       <img
           className="login-messenger-logo"
           src={process.env.PUBLIC_URL + "/facebook_messenger_logo.png"}
-          width="95"
-          height="95"
+          width="85"
+          height="85"
           alt="Messenger"
       />
       <h3 className="login-app-title text-center text-light">Facebook Messenger</h3>
       <form className="login-form">
-        <input size="50" className="form-control mb-4" onChange={(event)=>setUserName(event.target.value)} placeholder="Entrez votre nom..."/>
+        <input size="50" className="username-field form-control" onChange={(event)=>setUserName(event.target.value)} placeholder="Entrez votre nom..."/>
         <button className="login-button btn bg-white text-primary" onClick={(validateUserName)} type="submit">Se connecter</button>
       </form>
       {alert ? displayAlert() : <React.Fragment/>}

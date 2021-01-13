@@ -52,8 +52,8 @@ function Messages({ user }) {
             <img
                 className="messenger-logo mt-5 mb-4"
                 src={process.env.PUBLIC_URL + "/facebook_messenger_logo.png"}
-                width="95"
-                height="95"
+                width="85"
+                height="85"
                 alt="Facebook Messenger"
             />
             <h3 className="app-title">Facebook Messenger</h3>
@@ -65,7 +65,7 @@ function Messages({ user }) {
             <div className="vertical-space"></div>
             <form className="message-form">
                 <input
-                    className="input-field form-control"
+                    className="message-field form-control"
                     onChange={(event) => setMessage(event.target.value)}
                     value={message}
                     type="text"
