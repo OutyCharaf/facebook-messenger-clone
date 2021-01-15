@@ -33,6 +33,9 @@
 
 @media screen and (max-width: 454px) {
     
+    .dark-mode-button {
+        margin-bottom: 30px;
+    }
     .message-form {
         width: 94%;
     }
