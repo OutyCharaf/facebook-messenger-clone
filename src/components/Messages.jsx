@@ -54,6 +54,7 @@ function Messages({ user }) {
         document.getElementById("app-title").style.color="white";
         document.getElementById("username").style.color="white";
         document.getElementById("message-form").style.backgroundColor="black";
+        document.getElementById("message-field").style.backgroundColor="black";
     }
 
     const disableDarkMode = () => {
@@ -61,6 +62,7 @@ function Messages({ user }) {
         document.getElementById("app-title").style.color="black";
         document.getElementById("username").style.color="black";
         document.getElementById("message-form").style.backgroundColor="white";
+        document.getElementById("message-field").style.backgroundColor="white";
     }
 
     const changeMode = () => {
